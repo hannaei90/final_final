@@ -47,13 +47,14 @@ def show_ticket():
     your_number = get_number()
     current = get_current_num()
     waiting = waiting_num(your_number, current)
+    est_time = waiting * 7
     message = alert_message(waiting)
     flash(message)
     if waiting < 0:
         return render_template('place.html')
     else:
         return render_template('ticket_page.html', your_number=your_number, current=current,
-                               waiting=waiting, message=message)
+                               waiting=waiting, est_time =est_time, message=message)
 
 
 @app.route('/login', methods=['POST'])
