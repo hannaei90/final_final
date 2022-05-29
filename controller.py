@@ -47,14 +47,14 @@ def show_ticket():
     your_number = get_number()
     current = get_current_num()
     waiting = waiting_num(your_number, current)
-    est_time = waiting * 7
+    est_time = waiting * 5
     message = alert_message(waiting)
     flash(message)
     if waiting < 0:
         return render_template('place.html')
     else:
         return render_template('ticket_page.html', your_number=your_number, current=current,
-                               waiting=waiting, est_time =est_time, message=message)
+                               waiting=waiting, est_time=est_time, message=message)
 
 
 @app.route('/login', methods=['POST'])
@@ -68,10 +68,6 @@ def login():
     else:
         flash('Du är inloggad')
         return render_template('place.html')
-
-
-
-
 
 
 @app.route('/log_out', methods=['POST'])
@@ -94,7 +90,7 @@ def sign_up():
         flash('Dina lösenord matchar inte')
         return render_template('sign_up.html')
     else:
-        answer= create_user(email, password1)
+        answer = create_user(email, password1)
         if answer == 2:
             flash('Kontot finns redan')
             return render_template('sign_up.html')

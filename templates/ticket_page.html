@@ -2,11 +2,8 @@
 
 {% block body %}
 <p class="lead">Du står nu i kö. <br>
-    QT håller koll på ditt könummer och skickar en notis när det är din tur!</p>
-<html>
-<head>
+    QT håller koll och skickar en notis när det är din tur!</p>
 
-</head>
 <body>
     <meta http-equiv="refresh" content="30">
 {% for message in get_flashed_messages() %}
@@ -15,12 +12,11 @@
 
 
         <p>Nuvarande nummer: {{current}} <br>
-        Antal nummer tills ditt: {{waiting}}<br>
-        Ditt nummer: {{your_number}}<br>
-        Uppskattad väntetid är {{est_time}} minuter</p>
+        Antal nummer före: {{waiting}}<br>
+        Ditt nummer: {{your_number}}<br><br>
+            Uppskattad väntetid är: <b>{{est_time}}</b> minuter</p>
 
 
 </body>
-</html>
 
 {% endblock %}

@@ -36,11 +36,13 @@ def get_current_num():
 
 def alert_message(waiting):
     if waiting == 5:
-        return "Det är fem i kön före dig"
+        return "Det är fem före dig i kön"
     elif waiting == 2:
-        return "Det är 2 före dig i kön"
+        return "Det är två före dig i kön"
     elif waiting == 1:
-        return "Du är nästa i tur"
+        return "Du är näst i tur"
+    elif waiting == 0:
+        return "DET ÄR DIN TUR!"
     else:
         return " "
 
