@@ -122,7 +122,11 @@ padding:0.7rem;
 }
 }
 
-/*--- Fixed Background Image --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+/*--- Fixed Background --*/
 figure {
   position: relative;
   width: 100%;
@@ -150,8 +154,4 @@ figure {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   will-change: transform;
-}
-/*--- Bootstrap Padding Fix --*/
-[class*="col-"] {
-    padding: 1rem;
 }
